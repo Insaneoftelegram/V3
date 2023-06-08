@@ -21,7 +21,7 @@ INSANE = Client(
 )
 
 
-
+[
 
 @INSANE.on_message(filters.command(['song']))
 def a(client, message):
@@ -62,7 +62,7 @@ def a(client, message):
             print(e)
             m.edit('**👎 Nothing found Retry with another !**')
             return
-        
+        ]
         
         
         
