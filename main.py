@@ -74,24 +74,7 @@ async def song(client, message):
     test = search.result()
     p = json.loads(test)
     q = p.get("search_result")
-    type = "audio"
-    if type == "audio":
-    opts = {
-        "format": "bestaudio",
-        "addmetadata": True,
-        "key": "FFmpegMetadata",
-        "writethumbnail": True,
-        "prefer_ffmpeg": True,
-        "geo_bypass": True,
-        "nocheckcertificate": True,
-        "postprocessors": [
-            {
-                "key": "FFmpegExtractAudio",
-                 "preferredcodec": "mp3",
-                 "preferredquality": "320",
-                }
-            ]
-        }
+    
                       
                     
 
@@ -101,8 +84,6 @@ async def song(client, message):
                 
                 
 
-                          
-         
                             
  
 print("INSANE Bot started ")
