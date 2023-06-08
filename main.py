@@ -2,6 +2,27 @@ from pyrogram import Client, filters
 
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
+import os
+import aiohttp
+import asyncio
+import json
+import sys
+import time
+from youtubesearchpython import SearchVideos
+from pyrogram import filters, Client
+from sample_config import Config
+import from youtube_dl import YoutubeDL
+from youtube_dl.utils import (
+    ContentTooShortError,
+    DownloadError,
+    ExtractorError,
+    GeoRestrictedError,
+    MaxDownloadsReached,
+    PostProcessingError,
+    UnavailableVideoError,
+    XAttrMetadataError,
+)
+
 
 
 API_ID = "5642193"
@@ -44,8 +65,45 @@ async def owner_cmd(client, message):
     )
 
 
-                              
-                              
+@INSANE.on_message(filters.private & ~filters.bot & ~filters.command("help") & ~filters.command("start") & ~filters.command("s"))
+async def song(client, message):
+    cap = "@insanex3"
+    url = message.text
+    rkp = await message.reply("🌟 Processing🌟")
+    search = SearchVideos(url, offset=1, mode="json", max_results=1)
+    test = search.result()
+    p = json.loads(test)
+    q = p.get("search_result")
+    try:
+        url = q[0]["link"]
+        except BaseException:
+            return await rkp.edit("🌟Failed to find that song🌟.")
+        type = "audio"
+        if type == "audio":
+            opts = {
+                "format": "bestaudio",
+                "addmetadata": True,
+                "key": "FFmpegMetadata",
+                "writethumbnail": True,
+                "prefer_ffmpeg": True,
+                "geo_bypass": True,
+                "nocheckcertificate": True,
+                "postprocessors": [
+                    { 
+                        "key": "FFmpegExtractAudio",
+                        "preferredcodec": "mp3",
+                        "preferredquality": "320",
+                      }
+                    ]
+
+                    
+
+                    
+                
+                
+
+                          
+         
                             
  
 print("INSANE Bot started ")
