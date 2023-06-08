@@ -11,7 +11,7 @@ import time
 from youtubesearchpython import SearchVideos
 from pyrogram import filters, Client
 from sample_config import Config
-import from youtube_dl import YoutubeDL
+from youtube_dl import YoutubeDL
 from youtube_dl.utils import (
     ContentTooShortError,
     DownloadError,
