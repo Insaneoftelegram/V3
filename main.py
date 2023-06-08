@@ -67,5 +67,5 @@ def a(client, message):
         
         
         
-    print("Bot started")
+ 
     INSANE.run()
