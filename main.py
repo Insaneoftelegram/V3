@@ -76,7 +76,8 @@ async def song(client, message):
     q = p.get("search_result")
     try:
         url = q[0]["link"]
-        except BaseException:
+        #except
+        BaseException:
             return await rkp.edit("🌟Failed to find that song🌟.")
         type = "audio"
         if type == "audio":
