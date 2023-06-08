@@ -65,14 +65,22 @@ async def owner_cmd(client, message):
 
 
 @INSANE.on_message(filters.private & ~filters.bot & ~filters.command("help") & ~filters.command("start") & ~filters.command("s"))
-async def song(client, message):
-    cap = "@insanex3"
-    url = message.text
-    rkp = await message.reply("You not get music in Dm.. \n Join @SONGS_WORLDS_OFFICIAL and you will search the song.....")
-    search = SearchVideos(url, offset=1, mode="json", max_results=1)
-    test = search.result()
-    p = json.loads(test)
-    q = p.get("search_result")
+async def a(client, message):
+    query = ''
+    for i in message.command[1:]:
+        query += ' ' + str(i)
+        print(query)
+        m = message.reply('`Searching... Please Wait...`')
+        ydl_opts = {"format": "bestaudio[ext=m4a]"}
+        try:
+            results = []
+            count = 0
+            while len(results) == 0 and count < 6:
+                if count>0:
+                    time.sleep(1)
+                    results = YoutubeSearch(query, max_results=1).to_dict()
+                    count += 1
+    
     
                       
                     
