@@ -68,7 +68,7 @@ async def owner_cmd(client, message):
 async def song(client, message):
     cap = "@insanex3"
     url = message.text
-    rkp = await message.reply("🌟 Processing🌟")
+    rkp = await message.reply("Processing")
     search = SearchVideos(url, offset=1, mode="json", max_results=1)
     test = search.result()
     p = json.loads(test)
