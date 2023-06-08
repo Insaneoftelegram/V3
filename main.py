@@ -74,25 +74,10 @@ async def song(client, message):
     p = json.loads(test)
     q = p.get("search_result")
     
-@INSANE.on_message(filters.public & ~filters.bot & filters.command)
-async def song(client, message):
-    cap = "INSANEX3"
-    url = message.text.split(None, 1)[1]
-    rkp = await message.reply("Processing...")
-    if not url:
-        await rkp.edit("**🤦What's the song you want?**\nUsage`/song <song name>`")
-        search = SearchVideos(url, offset=1, mode="json", max_results=1)
-        test = search.result()
-        p = json.loads(test)
-        q = p.get("search_result")
-                      
                       
                     
 
-                    
-
-                    
-                
+                  
                 
 
                             
