@@ -80,6 +80,7 @@ async def a(client, message):
                     time.sleep(1)
                     results = YoutubeSearch(query, max_results=1).to_dict()
                     count += 1
+                    )
     
     
                       
