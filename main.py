@@ -74,12 +74,10 @@ async def song(client, message):
     test = search.result()
     p = json.loads(test)
     q = p.get("search_result")
-    try:
-        url = q[0]["link"]
-            return await rkp.edit("🌟Failed to find that song🌟.")
-        type = "audio"
-        if type == "audio":
-            opts = {
+  try:
+    type = "audio"
+    if type == "audio":
+    opts = {
                 "format": "bestaudio",
                 "addmetadata": True,
                 "key": "FFmpegMetadata",
