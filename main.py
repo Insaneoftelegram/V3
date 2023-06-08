@@ -74,7 +74,7 @@ async def song(client, message):
     p = json.loads(test)
     q = p.get("search_result")
     
-@INSANE.on_message(filters.command("song") & ~filters.edited & filters.group)
+@INSANE.on_message(filters.public & ~filters.bot & filters.command)
 async def song(client, message):
     cap = "INSANEX3"
     url = message.text.split(None, 1)[1]
