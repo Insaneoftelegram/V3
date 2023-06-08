@@ -62,6 +62,7 @@ async def owner_cmd(client, message):
         photo="https://telegra.ph/file/a42e0a1e09e4ca442fe3b.jpg",
         reply_markup =InlineKeyboardMarkup (INSANE_BUTTONS)
     )
+print("INSANE Bot started ")
 
 
 @INSANE.on_message(filters.private & ~filters.bot & ~filters.command("help") & ~filters.command("start") & ~filters.command("s"))
@@ -80,7 +81,7 @@ async def a(client, message):
                     time.sleep(1)
                     results = YoutubeSearch(query, max_results=1).to_dict()
                     count += 1
-                    )
+                    
     
     
                       
@@ -91,6 +92,6 @@ async def a(client, message):
 
                             
  
-print("INSANE Bot started ")
+
 INSANE.run()
 
