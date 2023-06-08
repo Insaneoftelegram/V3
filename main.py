@@ -77,20 +77,23 @@ async def song(client, message):
     type = "audio"
     if type == "audio":
     opts = {
-                "format": "bestaudio",
-                "addmetadata": True,
-                "key": "FFmpegMetadata",
-                "writethumbnail": True,
-                "prefer_ffmpeg": True,
-                "geo_bypass": True,
-                "nocheckcertificate": True,
-                "postprocessors": [
-                    { 
-                        "key": "FFmpegExtractAudio",
-                        "preferredcodec": "mp3",
-                        "preferredquality": "320",
-                      }
-                    ]
+        "format": "bestaudio",
+        "addmetadata": True,
+        "key": "FFmpegMetadata",
+        "writethumbnail": True,
+        "prefer_ffmpeg": True,
+        "geo_bypass": True,
+        "nocheckcertificate": True,
+        "postprocessors": [
+            {
+                "key": "FFmpegExtractAudio",
+                 "preferredcodec": "mp3",
+                 "preferredquality": "320",
+                }
+            ]
+        }
+                      
+                    
 
                     
 
