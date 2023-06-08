@@ -61,7 +61,7 @@ def a(client, message):
         except Exception as e:
             print(e)
             m.edit('**👎 Nothing found Retry with another !**')
-            return
+            return;
     print (" Bot started ")
     
     INSANE.run()
