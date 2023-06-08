@@ -74,7 +74,6 @@ async def song(client, message):
     test = search.result()
     p = json.loads(test)
     q = p.get("search_result")
-  try:
     type = "audio"
     if type == "audio":
     opts = {
