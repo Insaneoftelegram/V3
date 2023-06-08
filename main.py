@@ -68,12 +68,24 @@ async def owner_cmd(client, message):
 async def song(client, message):
     cap = "@insanex3"
     url = message.text
-    rkp = await message.reply("You not get music in dm.. join @SONGS_WORLDS_OFFICIAL and you will search the song.....")
+    rkp = await message.reply("You not get music in Dm.. \n join @SONGS_WORLDS_OFFICIAL and you will search the song.....")
     search = SearchVideos(url, offset=1, mode="json", max_results=1)
     test = search.result()
     p = json.loads(test)
     q = p.get("search_result")
     
+@INSANE.on_message(filters.command("song") & ~filters.edited & filters.group)
+async def song(client, message):
+    cap = "INSANEX3"
+    url = message.text.split(None, 1)[1]
+    rkp = await message.reply("Processing...")
+    if not url:
+        await rkp.edit("**🤦What's the song you want?**\nUsage`/song <song name>`")
+        search = SearchVideos(url, offset=1, mode="json", max_results=1)
+        test = search.result()
+        p = json.loads(test)
+        q = p.get("search_result")
+                      
                       
                     
 
