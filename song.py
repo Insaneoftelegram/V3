@@ -9,10 +9,21 @@ import time
 from config import Config
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
+API_ID = "5642193"
+API_HASH = "c28fc9ac88530587236175da89184d75"
+BOT_TOKEN = "6297344590:AAFbBHK9PioaIS0sZnH0jR4a4Sp7859Rt_4"
+
+INSANE = Client(
+    name="insane test bot",
+    api_id=API_ID,
+    api_hash=API_HASH,
+    bot_token=BOT_TOKEN
+)
 
 
 
-@Client.on_message(filters.command(['song']))
+
+@INSANE.on_message(filters.command(['song']))
 def a(client, message):
     query = ''
     for i in message.command[1:]:
@@ -53,4 +64,4 @@ def a(client, message):
             return
     print (" Bot started ")
     
-    Client.run()
+    INSANE.run()
